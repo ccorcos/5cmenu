@@ -1,0 +1,31 @@
+<body>
+  {{>main}}
+</body>
+
+<template name="main">
+  {{#each menus}}
+    {{>menu}}
+  {{/each}}
+</template>
+
+<template name="menu">
+  <div class="{{name}}"> 
+    <div class="title">
+      <a href="{{link}}">{{name}}</a>
+    </div>
+    {{#each meals}}
+      <div class="meal {{name}}">
+        <div class="meal-title">
+          {{name}}
+        </div>
+        <div class="food">
+          {{#each food}}
+            <div class="item">
+              {{this}}
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    {{/each}}
+  </div>  
+</template>
