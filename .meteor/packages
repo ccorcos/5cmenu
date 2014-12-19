@@ -18,4 +18,5 @@ http
 ccorcos:swipe
 percolate:synced-cron
 particle4dev:cheerio
+mdg:reload-on-resume
 

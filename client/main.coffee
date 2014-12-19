@@ -1,4 +1,4 @@
-@update = ->
+@updateMenus = ->
   Meteor.call 'updateMenus', (error, result) ->
     console.log error, result
 

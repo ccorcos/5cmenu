@@ -55,4 +55,5 @@ SyncedCron.add
 SyncedCron.start()
 
 Meteor.startup ->
-	update()
+	if Menus.find().count() is 0
+		updateMenus()
