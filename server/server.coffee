@@ -53,3 +53,6 @@ SyncedCron.add
   job: updateMenus
 
 SyncedCron.start()
+
+Meteor.startup ->
+	update()
