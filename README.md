@@ -21,3 +21,4 @@
 - Village Menu
 - automated advertisement charging
 
+`meteor run ios-device --mobile-server=https://5cmenu.meteor.com`
