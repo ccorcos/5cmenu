@@ -6,7 +6,7 @@ updateMenus = ->
 
 	menuString = result.content
 	
-	cheerio = Meteor.npmRequire("cheerio")
+	# cheerio = Meteor.npmRequire("cheerio")
 	
 	$ = cheerio.load(menuString)
 
@@ -33,7 +33,7 @@ updateMenus = ->
 	  menu = {}
 	  menu.name = names[menuId]
 	  menu.link = $("tr##{menuId}").find('a').attr('href')
-	  foods = $("tr##{menuId}>td").toArray().map((x) -> $(x).find('ul').children().toArray().map((x) -> _.trim $(x).text()))
+	  foods = $("tr##{menuId}>td").toArray().map((x) -> _.flatten($(x).find('ul').children().toArray().map((x) -> $(x).text().split(','))).map( (x) -> _.trim x))
 	  menu.meals = _.map [0...meals.length], (i) -> {name:meals[i], food: foods[i]}
 	  return menu
 
@@ -43,6 +43,13 @@ updateMenus = ->
 
 	return true
 
-
 Meteor.methods
 	'updateMenus': updateMenus
+
+SyncedCron.add
+  name: 'Update Menus'
+  schedule: (parser) ->
+    return parser.text('every hour')
+  job: updateMenus
+
+SyncedCron.start()

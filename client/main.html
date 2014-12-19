@@ -1,20 +1,22 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+</head>
+
 <body>
   {{>main}}
 </body>
 
 <template name="main">
-  {{#each menus}}
-    {{>menu}}
-  {{/each}}
+  {{>swipe Swiper=Swiper}}
 </template>
 
 <template name="menu">
-  <div class="{{name}}"> 
+  <div class="menu {{name}} scrollable">
+    <div class="bg"></div>
     <div class="title">
-      <a href="{{link}}">{{name}}</a>
+      <a>{{name}}</a>
     </div>
-    {{#each meals}}
-      <div class="meal {{name}}">
+    {{#each meals}}<div class="meal {{name}}">
         <div class="meal-title">
           {{name}}
         </div>
@@ -25,7 +27,48 @@
             </div>
           {{/each}}
         </div>
-      </div>
-    {{/each}}
+      </div>{{/each}}
   </div>  
+</template>
+
+<template name="Mudd">
+  {{#with menuByName 'Mudd'}}
+    {{>menu}}
+  {{/with}}
+</template>
+
+<template name="Pitzer">
+  {{#with menuByName 'Pitzer'}}
+    {{>menu}}
+  {{/with}}
+</template>
+
+<template name="Scripps">
+  {{#with menuByName 'Scripps'}}
+    {{>menu}}
+  {{/with}}
+</template>
+
+<template name="CMC">
+  {{#with menuByName 'CMC'}}
+    {{>menu}}
+  {{/with}}
+</template>
+
+<template name="Frary">
+  {{#with menuByName 'Frary'}}
+    {{>menu}}
+  {{/with}}
+</template>
+
+<template name="Frank">
+  {{#with menuByName 'Frank'}}
+    {{>menu}}
+  {{/with}}
+</template>
+
+<template name="Oldenborg">
+  {{#with menuByName 'Oldenborg'}}
+    {{>menu}}
+  {{/with}}
 </template>
