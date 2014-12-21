@@ -30,8 +30,13 @@ Template.main.rendered = ->
     positioning left, right, center
 
 Template.menu.rendered = ->
-  if this.data.meals?.length is 2
-    $(@find('.meal')).addClass('sunday')
+  self = this
+  this.autorun (c) ->
+    if self.data.meals?
+      console.log self.data.meals
+      if self.data.meals?.length is 2
+        $(self.find('.meal')).addClass('sunday')
+      c.stop()
 
 
 # Setup Google Analytics

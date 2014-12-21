@@ -4,7 +4,6 @@
 
 - cordova overscroll preference
 - viewport scaling
-- check that it works on sunday split screen as well
 
 ## LATER
 

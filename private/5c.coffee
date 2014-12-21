@@ -943,4 +943,10 @@ parseMenu = (menuId) ->
 # for menuId in menuIds
 #   console.log parseMenu menuId
 
-console.log parseMenu("scripps_menu").meals
+# console.log parseMenu("scripps_menu").meals
+
+
+console.log $("#frank_menu li").map( -> $(this).text()).toArray()
+
+console.log  $("tr#frank_menu>td").toArray().map( (x) -> $(x).find('ul').children().toArray().map( (x) -> $(x).text()))
+
