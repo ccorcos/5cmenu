@@ -1,1 +1,1 @@
-_ = lodash
+@_ = lodash

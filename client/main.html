@@ -25,6 +25,8 @@
   <div class="bg"></div>
   <div class="menu {{name}} scrollable">
     <div class="title">
+      <div class="left"><span class="arrow">&#8592;</span>{{leftMenu}}</div>
+      <div class="right">{{rightMenu}}<span class="arrow">&#8594;</span></div>
       <a>{{name}}</a>
     </div>
     {{#each meals}}<div class="meal {{name}}">
@@ -39,7 +41,7 @@
           {{/each}}
         </div>
       </div>{{/each}}
-  </div>  
+  </div>
 </template>
 
 <template name="Mudd">

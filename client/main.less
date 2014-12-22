@@ -9,6 +9,20 @@ body {
 }
 
 .page {
+  .left {
+    position:absolute;
+    /* top: 0; */
+    left: 0;
+  }
+  .right {
+    position:absolute;
+    /* top: 0; */
+    right: 0;
+  }
+  .left, .right {
+    margin: 0 15px;
+    font-size: 24px;
+  }
   .bg {
     position: absolute;
     top: 0;
@@ -29,49 +43,49 @@ body {
   &.Mudd {
     .bg {
       background-image: url('img/mudd.jpg');
-      
+
     }
   }
 
   &.Pitzer {
     .bg {
       background-image: url('img/pitzer.jpg');
-      
+
     }
   }
 
   &.Scripps {
     .bg {
       background-image: url('img/scripps.jpg');
-      
+
     }
   }
 
   &.CMC {
     .bg {
       background-image: url('img/cmc.jpg');
-      
+
     }
   }
 
   &.Frary {
     .bg {
       background-image: url('img/frary.jpg');
-      
+
     }
   }
 
   &.Frank {
     .bg {
       background-image: url('img/marston-quad.jpg');
-      
+
     }
   }
 
   &.Oldenborg {
     .bg {
       background-image: url('img/greek-theatre.jpg');
-      
+
     }
   }
 }
@@ -97,7 +111,6 @@ body {
     .meal {
       width: 33%;
     }
-
     .meal.sunday {
       width: 50%;
     }
@@ -105,6 +118,9 @@ body {
   @media (max-width: 768px) {
     .meal {
       width: 100%;
+    }
+    .left, .right {
+      display: none;
     }
   }
   .meal {

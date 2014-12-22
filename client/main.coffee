@@ -6,11 +6,18 @@
 Template.registerHelper 'menuByName', (name) -> Menus.findOne({name:name})
 
 pages = ["Mudd","Pitzer","CMC","Frank","Oldenborg","Frary","Scripps"]
+numPages = pages.length
 
 Swiper = new Swipe pages
 
 Template.main.helpers
   Swiper: -> Swiper
+
+Swiper.click 'menu', '.left', (e,t) ->
+  Swiper.moveLeft()
+
+Swiper.click 'menu', '.right', (e,t) ->
+  Swiper.moveRight()
 
 Template.main.rendered = ->
 
@@ -22,7 +29,6 @@ Template.main.rendered = ->
       if Swiper.pageIs center
         Swiper.leftRight left, right
 
-  numPages = pages.length
   for i in [0...numPages]
     left = pages[(i - 1 + numPages) % numPages]
     right = pages[(i + 1) % numPages]
@@ -39,6 +45,18 @@ Template.menu.rendered = ->
         $(self.find('.meal')).removeClass('sunday')
       # c.stop()
 
+stringEq = (a,b) -> a is b
+nameIs = _.curry stringEq
+
+Template.menu.helpers
+  leftMenu: ->
+    i = _.findIndex pages, nameIs(@name)
+    left = pages[(i - 1 + numPages) % numPages]
+    return left
+  rightMenu: ->
+    i = _.findIndex pages, nameIs(@name)
+    right = pages[(i + 1) % numPages]
+    return right
 
 # Setup Google Analytics
 Meteor.startup ->
