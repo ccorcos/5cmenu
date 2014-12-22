@@ -1,13 +1,18 @@
 updateMenus = ->
-	result = Meteor.http.get("https://aspc.pomona.edu/menu/", {timeout:30000})
+	menuString = ""
 	
-	if result.statusCode isnt 200
-		return false
+	if true
+		menuString = offlineMenu()
+	else
+		result = Meteor.http.get("https://aspc.pomona.edu/menu/", {timeout:30000})
 
-	menuString = result.content
-	
+		if result.statusCode isnt 200
+			return false
+
+		menuString = result.content
+
 	# cheerio = Meteor.npmRequire("cheerio")
-	
+
 	$ = cheerio.load(menuString)
 
 	meals = $("#meal_header>th").toArray().map((x) -> $(x).text())[1..]
@@ -20,7 +25,7 @@ updateMenus = ->
 							'frank_menu'
 							'oldenborg_menu']
 
-	names = 
+	names =
 	  'frank_menu': "Frank"
 	  'frary_menu': "Frary"
 	  'oldenborg_menu': "Oldenborg"

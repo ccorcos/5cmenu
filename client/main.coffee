@@ -5,7 +5,7 @@
 
 Template.registerHelper 'menuByName', (name) -> Menus.findOne({name:name})
 
-pages = [ "Mudd","Pitzer","CMC","Frank","Oldenborg","Frary","Scripps"]
+pages = ["Mudd","Pitzer","CMC","Frank","Oldenborg","Frary","Scripps"]
 
 Swiper = new Swipe pages
 
@@ -33,7 +33,6 @@ Template.menu.rendered = ->
   self = this
   this.autorun (c) ->
     if self.data.meals?
-      console.log self.data.meals
       if self.data.meals?.length is 2
         $(self.find('.meal')).addClass('sunday')
       c.stop()
@@ -42,7 +41,7 @@ Template.menu.rendered = ->
 # Setup Google Analytics
 Meteor.startup ->
   if Meteor.isCordova
-    # initIOSGoogleAnalytics()  
+    # initIOSGoogleAnalytics()
     window.analytics.startTrackerWithId('UA-57746708-3')
     trackView = -> window.analytics.trackView(Swiper.getPage())
     document.addEventListener("resume", trackView, false)
