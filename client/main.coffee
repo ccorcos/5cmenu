@@ -33,9 +33,11 @@ Template.menu.rendered = ->
   self = this
   this.autorun (c) ->
     if self.data.meals?
-      if self.data.meals?.length is 2
+      if self.data.meals.length is 2
         $(self.find('.meal')).addClass('sunday')
-      c.stop()
+      else if self.data.meals.length is 3
+        $(self.find('.meal')).removeClass('sunday')
+      # c.stop()
 
 
 # Setup Google Analytics
