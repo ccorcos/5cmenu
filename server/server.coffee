@@ -1,6 +1,8 @@
+Meteor.publish 'menus', -> Menus.find()
+
 updateMenus = ->
 	menuString = ""
-	
+
 	if true
 		menuString = offlineMenu()
 	else

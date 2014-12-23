@@ -4,7 +4,6 @@
 # but you can also edit it by hand.
 
 meteor-platform
-autopublish
 coffeescript
 less
 
@@ -17,3 +16,4 @@ ccorcos:swipe
 percolate:synced-cron
 particle4dev:cheerio
 mdg:reload-on-resume
+meteorhacks:kadira

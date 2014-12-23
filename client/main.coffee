@@ -1,3 +1,5 @@
+Meteor.subscribe 'menus'
+
 @updateMenus = ->
   Meteor.call 'updateMenus', (error, result) ->
     console.log error, result
