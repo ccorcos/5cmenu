@@ -48,3 +48,4 @@ App.launchScreens({
 // Set PhoneGap/Cordova preferences
 App.setPreference('BackgroundColor', '0x000000ff');
 App.setPreference('HideKeyboardFormAccessoryBar', true);
+// App.setPreference('DisallowOverscroll', true);

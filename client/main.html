@@ -45,43 +45,79 @@
 </template>
 
 <template name="Mudd">
-  {{#with menuByName 'Mudd'}}
-    {{>menu}}
-  {{/with}}
+  {{#if menuByName 'Mudd'}}
+    {{#with menuByName 'Mudd'}}
+      {{>menu}}
+    {{/with}}
+  {{else}}
+    {{> loading name='Mudd'}}
+  {{/if}}
 </template>
 
 <template name="Pitzer">
-  {{#with menuByName 'Pitzer'}}
-    {{>menu}}
-  {{/with}}
+  {{#if menuByName 'Pitzer'}}
+    {{#with menuByName 'Pitzer'}}
+      {{>menu}}
+    {{/with}}
+  {{else}}
+    {{> loading name='Pitzer'}}
+  {{/if}}
 </template>
 
 <template name="Scripps">
-  {{#with menuByName 'Scripps'}}
-    {{>menu}}
-  {{/with}}
+  {{#if menuByName 'Scripps'}}
+    {{#with menuByName 'Scripps'}}
+      {{>menu}}
+    {{/with}}
+  {{else}}
+    {{> loading name='Scripps'}}
+  {{/if}}
 </template>
 
 <template name="CMC">
-  {{#with menuByName 'CMC'}}
-    {{>menu}}
-  {{/with}}
+  {{#if menuByName 'CMC'}}
+    {{#with menuByName 'CMC'}}
+      {{>menu}}
+    {{/with}}
+  {{else}}
+    {{> loading name='CMC'}}
+  {{/if}}
 </template>
 
 <template name="Frary">
-  {{#with menuByName 'Frary'}}
-    {{>menu}}
-  {{/with}}
+  {{#if menuByName 'Frary'}}
+    {{#with menuByName 'Frary'}}
+      {{>menu}}
+    {{/with}}
+  {{else}}
+    {{> loading name='Frary'}}
+  {{/if}}
 </template>
 
 <template name="Frank">
-  {{#with menuByName 'Frank'}}
-    {{>menu}}
-  {{/with}}
+  {{#if menuByName 'Frank'}}
+    {{#with menuByName 'Frank'}}
+      {{>menu}}
+    {{/with}}
+  {{else}}
+    {{> loading name='Frank'}}
+  {{/if}}
 </template>
 
 <template name="Oldenborg">
-  {{#with menuByName 'Oldenborg'}}
-    {{>menu}}
-  {{/with}}
+  {{#if menuByName 'Oldenborg'}}
+    {{#with menuByName 'Oldenborg'}}
+      {{>menu}}
+    {{/with}}
+  {{else}}
+    {{> loading name='Oldenborg'}}
+  {{/if}}
+</template>
+
+
+<template name="loading">
+  <div class="loading">
+    <div class="label">Retrieving {{name}} Menu</div>
+    {{> spinner}}
+  </div>
 </template>

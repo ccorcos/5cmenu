@@ -1,1 +1,2 @@
-@_ = lodash
+# @_ = lodash
+@_ = _.extend @lodash, _

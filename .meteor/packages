@@ -9,7 +9,6 @@ less
 
 
 
-stevezhu:lodash
 wizonesolutions:underscore-string
 http
 ccorcos:swipe
@@ -17,3 +16,5 @@ percolate:synced-cron
 particle4dev:cheerio
 mdg:reload-on-resume
 meteorhacks:kadira
+sacha:spin
+stevezhu:lodash
