@@ -1,7 +1,6 @@
 # [5C Menu](5cmenu.com)
 
 ## TODO
-- spinner loading screen
 - run on iPhone
 - run on Android
 - 5cmenu.com version
