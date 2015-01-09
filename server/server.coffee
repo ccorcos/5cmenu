@@ -3,7 +3,7 @@ Meteor.publish 'menus', -> Menus.find()
 updateMenus = ->
 	menuString = ""
 
-	if true
+	if false
 		menuString = offlineMenu()
 	else
 		result = Meteor.http.get("https://aspc.pomona.edu/menu/", {timeout:30000})
