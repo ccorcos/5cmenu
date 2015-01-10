@@ -1,6 +1,9 @@
 # [5C Menu](5cmenu.com)
 
 ## TODO
+- update iOS app to go to the correct server.
+- fix responsive brunch
+- does cron work?
 - offline refresh overlay...?
 - run on Android
 - google play store
@@ -39,3 +42,4 @@ Select iOS Device to run on. Product > Archive. Validate. Submit.
 Then go on iTunes Connect and start filling everything in.
 
 ## Deploying Android
+

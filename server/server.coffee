@@ -1,5 +1,7 @@
 Meteor.publish 'menus', -> Menus.find()
 
+@Record = new Mongo.Collectrion 'record'
+
 updateMenus = ->
 	menuString = ""
 
@@ -46,20 +48,19 @@ updateMenus = ->
 
 	for menuId in menuIds
 		menu = parseMenu(menuId)
+		menu.date = Date.now()
 		Menus.upsert {name:menu.name}, menu
 
 	return true
 
 Meteor.methods
-	'updateMenus': updateMenus
-
-SyncedCron.add
-  name: 'Update Menus'
-  schedule: (parser) ->
-    return parser.text('every hour')
-  job: updateMenus
-
-SyncedCron.start()
+	'updateMenus': ->
+		date = Menus.findOne()?.date
+		if date
+			if Date.now() - date > 3600000
+				updateMenus()
+		else
+			updateMenus()
 
 Meteor.startup ->
 	if Menus.find().count() is 0

@@ -23,6 +23,8 @@ Swiper.click 'menu', '.right', (e,t) ->
 
 Template.main.rendered = ->
 
+  updateMenus()
+
   # initial page
   Swiper.setInitialPage("Mudd")
 

@@ -41,7 +41,6 @@ mongo-livedata@1.0.7
 observe-sequence@1.0.4
 ordered-dict@1.0.2
 particle4dev:cheerio@1.0.0
-percolate:synced-cron@1.1.0
 random@1.0.2
 reactive-dict@1.0.5
 reactive-var@1.0.4
