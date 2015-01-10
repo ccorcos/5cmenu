@@ -1,7 +1,8 @@
 // This section sets up some basic app metadata,
 // the entire section is optional.
 App.info({
-  id: 'com.chetcorcos.5CollegeMenu',
+  // id: 'com.chetcorcos.5CollegeMenu',
+  id: 'com.5cmenu',
   name: '5C Menu',
   description: 'Dining hall menus of the Claremont Colleges.',
   author: 'Chet Corcos',

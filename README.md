@@ -37,3 +37,5 @@ Then build (oops. right now iOS runs at 5cmenu.meteor.com):
 Select iOS Device to run on. Product > Archive. Validate. Submit.
 
 Then go on iTunes Connect and start filling everything in.
+
+## Deploying Android
