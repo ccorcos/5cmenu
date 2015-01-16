@@ -32,7 +32,7 @@ Then deploy:
 
 Then build (oops. right now iOS runs at 5cmenu.meteor.com):
 `trash .meteor/local`
-`meteor run ios --mobile-server=https://5cmenu.com`
+`meteor run ios --mobile-server=http://5cmenu.com`
 `cd .meteor/local/cordova-build/platforms/ios`
 `open 5C\ Menu.xcodeproj`
 

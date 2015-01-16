@@ -1,6 +1,6 @@
 Meteor.publish 'menus', -> Menus.find()
 
-@Record = new Mongo.Collectrion 'record'
+@Record = new Mongo.Collection 'record'
 
 updateMenus = ->
 	menuString = ""
@@ -10,7 +10,7 @@ updateMenus = ->
 	else
 		result = Meteor.http.get("https://aspc.pomona.edu/menu/", {timeout:30000})
 
-		if result.statusCode isnt 200
+		if result?.statusCode isnt 200
 			return false
 
 		menuString = result.content
