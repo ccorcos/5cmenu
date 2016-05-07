@@ -1,0 +1,2 @@
+deploy/mup.json filter=git-crypt diff=git-crypt
+deploy/settings.json filter=git-crypt diff=git-crypt
